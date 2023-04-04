@@ -3,14 +3,15 @@ const toDoInput = document.querySelector('#todo_form input');
 const toDoList = document.getElementById('todo_list');
 const TODOS_KEY = "todos"
 
-const toDos = [];
+
+let toDos = [];
+
 
 //localstorage에 저장
-function saveToDos() { 
+function saveToDos() {
   //array로 변환 setItem (key, value)
-  localStorage.setItem('TODOS_KEY', JSON.stringify(toDos));
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
-
 
 //리스트 삭제
 function deleteToDo(event) { 
@@ -20,16 +21,15 @@ function deleteToDo(event) {
 }
 
 
-//리스트 추가
+//리스트 추가한걸 화면에 보여주기
 function paintToDo(newTodo) {
-  // console.log('오늘 할일', newTodo);
   //li,span 만들기
   const li = document.createElement('li');
   const span = document.createElement('span');
   span.innerText = newTodo;
   //삭제용 버튼생성
   const button = document.createElement('button');
-  button.innerText = '❌';
+  button.innerText = '➖';
   button.addEventListener("click",deleteToDo)
   //li안에 span넣기
   li.appendChild(span);
@@ -54,13 +54,11 @@ function handleToDoSubmit(event) {
 
 toDoForm.addEventListener('submit', handleToDoSubmit);
 
-function sayHello() { 
-  console.log('hello');
-}
 const savedToDos = localStorage.getItem(TODOS_KEY);
-console.log(savedToDos);
 
 if (savedToDos !== null ) { 
   const parsedToDos = JSON.parse(savedToDos);
-  parsedToDos.forEach(sayHello);
+  toDos = parsedToDos; //예전todo
+  parsedToDos.forEach(paintToDo);
+
 }
