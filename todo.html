@@ -12,10 +12,13 @@
 <body>
   <div class="main_container">
     <div class="todo_box">
-      <h2>T O D O</h2>
+      <div class="header">
+        <h2>T O D O</h2>
+        <div id="date"></div>
+      </div>
       <hr>
       <form id="todo_form">
-        <input type="text" placeholder="Write to do" required class="main_form" />
+        <input type="text" maxlength="25" placeholder="할 일 작성하기" required class="main_form" />
       </form>
       <ul id="todo_list"></ul>
     </div>

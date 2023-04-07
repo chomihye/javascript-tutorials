@@ -1,13 +1,26 @@
+/*네이버에서 제공한 나눔글꼴이 적용되어 있습니다. */
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 * {
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-family: 'NanumSquareNeo-Variable';
 }
 
 .main_container {
   display: flex;
   justify-content: center;
-  /* border: 1px solid black;
-  border-radius: 5px; */
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .todo_box{
@@ -15,7 +28,6 @@
     border-radius: 5px;
     padding: 50px;
 }
-
 
 .main_form {
   width: 500px;
@@ -28,7 +40,8 @@
 }
 
 .main_form::placeholder {
-  font-size: 18px;
+  font-size: 15px;
+  padding-left: 15px;
 }
 
 .todo_box ul {
@@ -48,12 +61,12 @@
   border-radius: 5px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding-left: 20px;
 }
 
 .todo_box li span {
-  margin-right: 30px;
+  margin-left: 10px;
+  width: 90%;
 }
 
 .todo_box li button {
