@@ -34,11 +34,15 @@ function deleteToDo(event) {
 
 //리스트 추가한걸 화면에 보여주기
 function paintToDo(newTodo) {
-  //li,span 만들기
+  //li 만들기
   const li = document.createElement('li');
   li.id = newTodo.id;
-  const span = document.createElement('span');
-  span.innerText = newTodo.text;
+  //input 만들기
+  const input = document.createElement('input');
+  input.setAttribute('value', newTodo.text);
+  input.id = 'main_input';
+  input.disabled = true;
+  //check box 만들기
   const checkBox = document.createElement('input');
   checkBox.setAttribute('type', 'checkbox');
   //삭제용 버튼생성
@@ -49,9 +53,9 @@ function paintToDo(newTodo) {
   const editButton = document.createElement('button');
   editButton.innerText = '📝';
   editButton.addEventListener('click', editTodo);
-  button.addEventListener;
+  //구성
   li.appendChild(checkBox);
-  li.appendChild(span);
+  li.appendChild(input);
   li.appendChild(editButton);
   li.appendChild(button);
   toDoList.appendChild(li);
@@ -59,29 +63,19 @@ function paintToDo(newTodo) {
   //체크박스 중간 라인생성
   checkBox.addEventListener('change', (event) => {
     if (checkBox.checked) {
-      span.style.textDecorationLine = 'line-through';
+      input.style.textDecorationLine = 'line-through';
     } else {
-      span.style.textDecorationLine = 'none';
+      input.style.textDecorationLine = 'none';
     }
   });
 }
 
 //리스트 수정하기
-//수정 버튼을 누른다 -> input안에 원래의 내용이 담긴채로 생긴다
-//내용을 수정 -> 확인버튼 등을 누르면 수정이 완료됨.
-
-
-
-
-//리스트 수정
 function editTodo(event) {
-  const li = event.target.parentElement;
-  console.log(li);
-  const input = document.createElement('input');
-  const span = li.querySelector()
-
+  const mainInput = event.target.parentElement;;
+  console.log(mainInput);
+  mainInput.disabled = false;
 }
-
 
 function handleToDoSubmit(event) {
   event.preventDefault();
