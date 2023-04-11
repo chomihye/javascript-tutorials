@@ -52,6 +52,7 @@ function paintToDo(newTodo) {
   //수정용 버튼 생성
   const editButton = document.createElement('button');
   editButton.innerText = '📝';
+  editButton.id = 'editBtn';
   editButton.addEventListener('click', editTodo);
   //구성
   li.appendChild(checkBox);
@@ -72,10 +73,20 @@ function paintToDo(newTodo) {
 
 //리스트 수정하기
 function editTodo(event) {
-  const mainInput = event.target.parentElement;;
+  const mainInput = event.target.parentElement.querySelector('#main_input');
   console.log(mainInput);
-  mainInput.disabled = false;
+  if (mainInput.disabled == true) {
+    mainInput.disabled = false;
+    mainInput.style.backgroundColor = 'white';
+  } else { 
+    mainInput.disabled = true;
+    mainInput.style.backgroundColor = 'transparent';
+
+  }
+ 
+
 }
+
 
 function handleToDoSubmit(event) {
   event.preventDefault();
@@ -100,3 +111,11 @@ if (savedToDos !== null) {
   toDos = parsedToDos; //예전todo
   parsedToDos.forEach(paintToDo);
 }
+
+// {id: 1, name: '조미혜'}
+function test(user = {}) {
+  console.log(user.name);
+}
+
+const userObj = {id: 2, name: 'youhyun'};
+test(userObj);

@@ -71,7 +71,10 @@
 
 #main_input{
   width: 80%;
-  margin-left: 10px;
+  height: 30px;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 10px;
   border: none;
   background-color: rgb(242, 242, 242);
   outline: none;
