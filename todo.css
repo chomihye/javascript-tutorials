@@ -1,15 +1,14 @@
 /*네이버에서 제공한 나눔글꼴이 적용되어 있습니다. */
 @font-face {
-    font-family: 'NanumSquareNeo-Variable';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
-
-
 * {
   box-sizing: border-box;
-   font-family: 'NanumSquareNeo-Variable';
+  font-family: 'NanumSquareNeo-Variable';
 }
 
 .main_container {
@@ -17,31 +16,32 @@
   justify-content: center;
 }
 
-.header{
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.todo_box{
-    border: 0.5px solid lightgrey;
-    border-radius: 5px;
-    padding: 50px;
+.todo_box {
+  border: 0.5px solid lightgrey;
+  border-radius: 5px;
+  padding: 50px;
 }
 
 .main_form {
   width: 500px;
   height: 45px;
   border-radius: 5px;
-  border: 2px solid lightpink;
+  border: 2px solid lightskyblue;
   margin-top: 20px;
   margin-bottom: 25px;
+  padding-left: 20px;
   outline: none;
+  font-size: 15px;
 }
 
 .main_form::placeholder {
   font-size: 15px;
-  padding-left: 15px;
 }
 
 .todo_box ul {
@@ -64,12 +64,7 @@
   padding-left: 20px;
 }
 
-/* .todo_box li span {
-  margin-left: 10px;
-  width: 90%;
-} */
-
-#main_input{
+#main_input {
   width: 80%;
   height: 30px;
   border-radius: 5px;
@@ -79,7 +74,6 @@
   background-color: rgb(242, 242, 242);
   outline: none;
 }
-
 
 .todo_box li button {
   cursor: pointer;

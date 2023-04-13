@@ -74,19 +74,22 @@ function paintToDo(newTodo) {
 //리스트 수정하기
 function editTodo(event) {
   const mainInput = event.target.parentElement.querySelector('#main_input');
-  console.log(mainInput);
   if (mainInput.disabled == true) {
     mainInput.disabled = false;
     mainInput.style.backgroundColor = 'white';
-  } else { 
+    event.target.innerText = '✔️';
+  } else {
     mainInput.disabled = true;
     mainInput.style.backgroundColor = 'transparent';
-
+    event.target.innerText = '📝';
+    //수정된 부분 추가하기
+    const index = toDos.findIndex(
+      (todo) => todo.id === parseInt(mainInput.parentElement.id)
+    );
+    toDos[index].text = mainInput.value;
+    saveToDos();
   }
- 
-
 }
-
 
 function handleToDoSubmit(event) {
   event.preventDefault();
@@ -96,10 +99,9 @@ function handleToDoSubmit(event) {
     text: newTodo,
     id: Date.now(), //id를 통해 구분
   };
-  toDos.push(newTodoObj);
-  //paintTodo호출 후 newTodo를 보냄
-  paintToDo(newTodoObj); //화면에 표현하는 용도
-  saveToDos(); //저장
+  toDos.push(newTodoObj); // toDos 배열에 추가
+  paintToDo(newTodoObj); // 리스트 화면에 보여주기
+  saveToDos(); // localstorage에 저장
 }
 
 toDoForm.addEventListener('submit', handleToDoSubmit);
@@ -111,11 +113,3 @@ if (savedToDos !== null) {
   toDos = parsedToDos; //예전todo
   parsedToDos.forEach(paintToDo);
 }
-
-// {id: 1, name: '조미혜'}
-function test(user = {}) {
-  console.log(user.name);
-}
-
-const userObj = {id: 2, name: 'youhyun'};
-test(userObj);
