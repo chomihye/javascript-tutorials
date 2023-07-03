@@ -18,7 +18,6 @@ function checkField() {
         return false;
     } else if (id.value == "test" && pw.value == "1234") {
         alert("로그인 성공");
-        console.log("로그인 성공");
         moveUrl();
     } else {
         alert("아이디나 패스워드를 확인하세요");
