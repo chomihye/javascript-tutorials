@@ -1,0 +1,14 @@
+table {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  width: 80%;
+  height: 200px;
+  text-align: center;
+}
+table th {
+  height: 50px;
+  background-color: lightpink;
+}
+table tr {
+  border: 1px solid gray;
+}/*# sourceMappingURL=check.css.map */
