@@ -28,7 +28,7 @@ data.forEach((element) => {
                     <td >${element.id}</td>
                     <td >${element.name}</td>
                     <td >${element.age}</td>
-                    <td><button type="button" class="deleteBtn" onclick="deleteSelect()">삭제</button></td>
+                    <td><button type="button" class="deleteBtn" >삭제</button></td>
                 </tr>`;
     table.innerHTML += row;
 });
@@ -118,4 +118,10 @@ function deleteSelect() {
     if (checkbox.checked) {
         console.log("asdfasfd");
     }
+}
+
+for (let i = 0; i < deleteBtn.length; i++) {
+    deleteBtn[i].addEventListener("click", function () {
+        console.log("eee");
+    });
 }
