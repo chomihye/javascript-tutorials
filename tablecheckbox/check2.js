@@ -15,6 +15,16 @@ let data = [
         name: "유리",
         age: 5,
     },
+    {
+        id: "ggg789",
+        name: "이슬이",
+        age: 7,
+    },
+    {
+        id: "qbqb25",
+        name: "철수",
+        age: 81,
+    },
 ];
 
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -32,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 
     document.querySelector(".sortBtn").addEventListener("click", sortToggle);
+    document.querySelector(".resetBtn").addEventListener("click", aaa);
 });
 
 function setTableData(list) {
@@ -104,5 +115,18 @@ function sortToggle() {
         }); //내림차순
         sortData = true;
     }
+    setTableData(data);
+}
+
+//초기화 시키기
+//원래 상태를 저장해놓음..?
+//초기화 버튼을 클릭하면..초기화가됨.......?
+
+// let currentData =
+
+let originData = data;
+console.log(data);
+
+function aaa() {
     setTableData(data);
 }

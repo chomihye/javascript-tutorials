@@ -1,1 +1,11 @@
-/*# sourceMappingURL=join.css.map */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 30px auto;
+}
+.login-form input {
+  margin-bottom: 10px;
+  width: 150px;
+  height: 30px;
+}/*# sourceMappingURL=join.css.map */
